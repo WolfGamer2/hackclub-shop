@@ -1,4 +1,3 @@
-// pages/shop.tsx
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 
@@ -11,7 +10,7 @@ const Shop = () => {
     const fetchProducts = async () => {
       const response = await fetch("/api/printful/products");
       const data = await response.json();
-      setProducts(data.result); 
+      setProducts(data.result);
     };
 
     fetchProducts();

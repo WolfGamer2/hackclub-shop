@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^5.2.0",
     "autoprefixer": "^10.4.20",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
@@ -23,6 +22,8 @@
     "eslint-config-next": "15.0.3",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack": "^5.97.0",
+    "webpack-cli": "^5.1.4"
   }
 }
