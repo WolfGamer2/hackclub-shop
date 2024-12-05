@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+}
+
 const Shop = () => {
-  const [products, setProducts] = useState<any[]>([]);
-  const [cart, setCart] = useState<any[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [cart, setCart] = useState<Product[]>([]);
 
   useEffect(() => {
-    // printful api
+    // Fetch products from the Printful API
     const fetchProducts = async () => {
-      const response = await fetch("/api/printful/products");
-      const data = await response.json();
-      setProducts(data.result);
+      try {
+        const response = await fetch("/api/printful/products");
+        const data = await response.json();
+        setProducts(data.result);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
     };
 
     fetchProducts();
   }, []);
 
-  const addToCart = (product: { id: number; name: string; price: number }) => {
+  const addToCart = (product: Product) => {
     setCart([...cart, product]);
   };
 
@@ -39,7 +49,7 @@ const Shop = () => {
               className="border p-4 rounded-lg shadow-lg bg-white"
             >
               <h2 className="text-xl font-semibold">{product.name}</h2>
-              <p className="text-lg text-gray-700">${product.price}</p>
+              <p className="text-lg text-gray-700">${product.price.toFixed(2)}</p>
               <button
                 className="bg-blue-600 text-white py-2 px-4 mt-4 rounded"
                 onClick={() => addToCart(product)}
@@ -53,8 +63,8 @@ const Shop = () => {
         <div className="mt-6 p-4 bg-white shadow-lg rounded-lg">
           <h2 className="text-2xl font-semibold">Shopping Cart</h2>
           <ul className="mt-4">
-            {cart.map((item, index) => (
-              <li key={index} className="flex justify-between py-2">
+            {cart.map((item) => (
+              <li key={item.id} className="flex justify-between py-2">
                 <span>{item.name}</span>
                 <button
                   className="text-red-600"
@@ -67,7 +77,7 @@ const Shop = () => {
           </ul>
           <div className="flex justify-between mt-4 font-semibold">
             <span>Total:</span>
-            <span>${totalPrice}</span>
+            <span>${totalPrice.toFixed(2)}</span>
           </div>
         </div>
       </div>

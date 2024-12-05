@@ -1,25 +1,32 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
+interface CartItem {
+  id: number; 
+  name: string;
+  price: number;
+  quantity: number; 
+}
+
 const Checkout = () => {
-  const [cart, setCart] = useState<any[]>([]); 
+  const [cart, setCart] = useState<CartItem[]>([]); 
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    // cart items from local storage
-    const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
+    // Retrieve cart items from local storage
+    const savedCart = JSON.parse(localStorage.getItem('cart') || '[]') as CartItem[];
     setCart(savedCart);
   }, []);
 
   const handleCheckout = () => {
     setLoading(true);
-    
-    // fake payment
+
+    // fake payment process
     setTimeout(() => {
       setLoading(false);
       alert('Checkout complete!');
-      router.push('/thank-you'); // tahnk you pge
+      router.push('/thank-you'); // Redirect to thank-you page
     }, 2000); // 2 seconds wait
   };
 
@@ -29,17 +36,19 @@ const Checkout = () => {
       <div className="mt-4">
         <h2 className="text-xl">Cart Items</h2>
         <ul>
-          {cart.map((item, index) => (
-            <li key={index} className="flex justify-between py-2">
+          {cart.map((item) => (
+            <li key={item.id} className="flex justify-between py-2">
               <span>{item.name}</span>
-              <span>${item.price}</span>
+              <span>${item.price.toFixed(2)}</span>
             </li>
           ))}
         </ul>
 
         <div className="flex justify-between mt-4 font-semibold">
           <span>Total:</span>
-          <span>${cart.reduce((total, item) => total + item.price, 0)}</span>
+          <span>
+            ${cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0).toFixed(2)}
+          </span>
         </div>
 
         <button
