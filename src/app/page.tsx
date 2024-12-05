@@ -1,15 +1,13 @@
-'use client'; 
+'use client';
 
-import React, { useState } from "react";
+import React from "react";
 import Navigation from "../../components/Navigation";
 
 const MainPage = () => {
-  const [cart, setCart] = useState([]); 
-
   return (
     <div className="bg-hackclub-light min-h-screen flex flex-col">
       {/* Navigation  */}
-      <Navigation cartItemCount={cart.length} />
+      <Navigation cartItemCount={0} /> {/* Pass 0 for cart item count since it's not being used here */}
 
       {/* main content section */}
       <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center px-6 py-16">
