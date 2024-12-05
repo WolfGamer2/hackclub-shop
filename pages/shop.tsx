@@ -54,7 +54,7 @@ const Shop = () => {
               >
                 <h2 className="text-xl font-semibold">{product.name}</h2>
                 <p className="text-lg text-gray-700">
-                  ${product.price.toFixed(2)}
+                  ${product.price ? product.price.toFixed(2) : '0.00'}
                 </p>
                 <button
                   className="bg-blue-600 text-white py-2 px-4 mt-4 rounded"
@@ -91,7 +91,7 @@ const Shop = () => {
           {cart.length > 0 && (
             <div className="flex justify-between mt-4 font-semibold">
               <span>Total:</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span>${totalPrice ? totalPrice.toFixed(2) : '0.00'}</span>
             </div>
           )}
         </div>
