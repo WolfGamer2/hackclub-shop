@@ -14,16 +14,17 @@ const Shop = () => {
   // Manually adding products from Printful API
   useEffect(() => {
     const fetchProducts = async () => {
-      // Manually adding products for now
-      const fetchedProducts: Product[] = [
-        { id: 1, name: "T-Shirt", price: 15.99 },
-        { id: 2, name: "Mug", price: 9.99 },
-        { id: 3, name: "Hoodie", price: 25.99 },
-        { id: 4, name: "Cap", price: 12.49 },
-        { id: 5, name: "Poster", price: 5.99 },
-        // More products...
-      ];
-      setProducts(fetchedProducts); // Set products
+      try {
+        const response = await fetch('/api/printful/products');
+        if (!response.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        const data = await response.json();
+        const fetchedProducts = data.result;
+        setProducts(fetchedProducts);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchProducts();
