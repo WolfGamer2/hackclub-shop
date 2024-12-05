@@ -5,7 +5,7 @@ interface CartItem {
   id: number; 
   name: string;
   price: number;
-  quantity: number; 
+  quantity: number;
 }
 
 const Checkout = () => {
@@ -14,7 +14,7 @@ const Checkout = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Retrieve cart items from local storage
+    // Retrieve cart items 
     const savedCart = JSON.parse(localStorage.getItem('cart') || '[]') as CartItem[];
     setCart(savedCart);
   }, []);

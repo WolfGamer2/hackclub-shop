@@ -23,7 +23,7 @@ const Shop = () => {
         { id: 5, name: "Poster", price: 5.99 },
         // More products...
       ];
-      setProducts(fetchedProducts); // Set products to state
+      setProducts(fetchedProducts); // Set products
     };
 
     fetchProducts();
@@ -72,7 +72,7 @@ const Shop = () => {
           )}
         </div>
 
-        {/* Shopping Cart */}
+        {/* Cart */}
         <div className="mt-6 p-4 bg-white shadow-lg rounded-lg">
           <h2 className="text-2xl font-semibold">Shopping Cart</h2>
           <ul className="mt-4">
