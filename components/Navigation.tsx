@@ -1,18 +1,20 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navigation = ({ cartItemCount }: { cartItemCount: number }) => {
+const Navigation = () => {
   return (
-    <nav className="bg-blue-600 p-4">
-      <div className="container mx-auto flex justify-between">
-        <Link href="/">
-          <a className="text-white text-xl font-bold">Hack Club Shop</a>
+    <nav className="bg-hackclub-dark text-white py-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-2xl font-bold">
+          Hack Club Shop
         </Link>
-        <div className="flex items-center">
-          <Link href="/shop">
-            <a className="text-white ml-4">Shop</a>
+        <div>
+          <Link to="/shop" className="px-4 py-2 text-lg hover:bg-hackclub-red rounded">
+            Shop
           </Link>
-          <div className="text-white ml-4">{cartItemCount} Items</div>
+          <Link to="/cart" className="px-4 py-2 text-lg hover:bg-hackclub-red rounded">
+            Cart
+          </Link>
         </div>
       </div>
     </nav>
