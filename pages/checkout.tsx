@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 interface CartItem {
-  id: number; 
+  id: number;
   name: string;
   price: number;
   quantity: number;
@@ -27,7 +27,7 @@ const Checkout = () => {
       setLoading(false);
       alert('Checkout complete!');
       router.push('/thank-you'); // Redirect to thank-you page
-    }, 2000); // 2 seconds wait
+    }, 2000);  // 2 seconds wait
   };
 
   return (
