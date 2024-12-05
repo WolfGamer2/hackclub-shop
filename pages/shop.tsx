@@ -1,3 +1,4 @@
+// pages/Shop.tsx
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 
@@ -11,7 +12,6 @@ const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<Product[]>([]);
 
-  // Manually adding products from Printful API
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -45,8 +45,6 @@ const Shop = () => {
       <Navigation cartItemCount={cart.length} />
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-6">Shop Our Products</h1>
-
-        {/* Displaying products */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {products.length > 0 ? (
             products.map((product) => (
@@ -56,9 +54,7 @@ const Shop = () => {
               >
                 <h2 className="text-xl font-semibold">{product.name}</h2>
                 <p className="text-lg text-gray-700">
-                  ${product.price && !isNaN(product.price)
-                    ? product.price.toFixed(2)
-                    : "N/A"}
+                  ${product.price.toFixed(2)}
                 </p>
                 <button
                   className="bg-blue-600 text-white py-2 px-4 mt-4 rounded"
@@ -73,7 +69,6 @@ const Shop = () => {
           )}
         </div>
 
-        {/* Cart */}
         <div className="mt-6 p-4 bg-white shadow-lg rounded-lg">
           <h2 className="text-2xl font-semibold">Shopping Cart</h2>
           <ul className="mt-4">

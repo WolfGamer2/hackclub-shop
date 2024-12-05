@@ -1,12 +1,15 @@
+'use client';
+
 import React from "react";
-import Navigation from '../../components/Navigation';
+import Navigation from "../../components/Navigation";
 
 const MainPage = () => {
   return (
     <div className="bg-hackclub-light min-h-screen flex flex-col">
-      <Navigation />
+      {/* Navigation  */}
+      <Navigation cartItemCount={0} /> {/* Pass 0 for cart item count since it's not being used here */}
 
-      {/* Centering the main content section */}
+      {/* main content section */}
       <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center px-6 py-16">
         <div className="max-w-3xl w-full">
           <h1 className="text-6xl font-extrabold mb-8">Welcome to the Hack Club Shop</h1>
@@ -19,7 +22,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      {/* Footer at the bottom */}
+      {/* Footer */}
       <footer className="text-center text-white py-6 bg-hackclub-dark">
         © 2024 Hack Club. All rights reserved.
       </footer>
