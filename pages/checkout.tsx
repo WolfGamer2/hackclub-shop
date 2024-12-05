@@ -9,7 +9,7 @@ interface CartItem {
 }
 
 const Checkout = () => {
-  const [cart, setCart] = useState<CartItem[]>([]); 
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -39,7 +39,7 @@ const Checkout = () => {
           {cart.map((item) => (
             <li key={item.id} className="flex justify-between py-2">
               <span>{item.name}</span>
-              <span>${item.price.toFixed(2)}</span>
+              <span>${item.price ? item.price.toFixed(2) : '0.00'}</span>
             </li>
           ))}
         </ul>
@@ -47,7 +47,7 @@ const Checkout = () => {
         <div className="flex justify-between mt-4 font-semibold">
           <span>Total:</span>
           <span>
-            ${cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0).toFixed(2)}
+            ${cart.reduce((total, item) => total + (item.price ? item.price * (item.quantity || 1) : 0), 0).toFixed(2)}
           </span>
         </div>
 
