@@ -11,7 +11,7 @@ const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<Product[]>([]);
 
-  // Manually adding products from Printful (replace with real products data)
+  // Manually adding products from Printful API
   useEffect(() => {
     const fetchProducts = async () => {
       // Manually adding products for now
