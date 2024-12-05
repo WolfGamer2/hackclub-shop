@@ -6,21 +6,21 @@ const MainPage = () => {
     <div className="bg-hackclub-light min-h-screen flex flex-col">
       <Navigation />
 
-      {/* full screen and centered */}
-      <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center py-16">
-        <div className="max-w-2xl">
-          <h1 className="text-5xl font-bold mb-6">Welcome to the Hack Club Shop</h1>
-          <p className="text-lg mb-8">
+      {/* Centering the main content section */}
+      <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center px-6 py-16">
+        <div className="max-w-3xl w-full">
+          <h1 className="text-6xl font-extrabold mb-8">Welcome to the Hack Club Shop</h1>
+          <p className="text-xl mb-8 max-w-xl mx-auto">
             Grab exclusive merch designed by and for Hack Clubbers. T-shirts, hoodies, stickers, and more!
           </p>
-          <button className="bg-hackclub-red py-3 px-8 rounded-lg text-lg hover:bg-red-700 transition">
+          <button className="bg-hackclub-red py-4 px-10 rounded-lg text-xl hover:bg-red-700 transition-all duration-300">
             Start Shopping
           </button>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="text-center text-white py-4 bg-hackclub-dark">
+      {/* Footer at the bottom */}
+      <footer className="text-center text-white py-6 bg-hackclub-dark">
         © 2024 Hack Club. All rights reserved.
       </footer>
     </div>
