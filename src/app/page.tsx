@@ -7,7 +7,7 @@ import Navigation from "../../components/Navigation";
 const MainPage = () => {
   return (
     <div className="bg-hackclub-light min-h-screen flex flex-col">
-      <Navigation/>
+      <Navigation cartItemCount={0} />
 
       <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center px-6 py-16">
         <div className="max-w-3xl w-full">
