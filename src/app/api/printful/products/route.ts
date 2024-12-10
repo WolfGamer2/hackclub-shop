@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 	const PRINTFUL_API_URL = process.env.PRINTFUL_API_URL!;
 	const PRINTFUL_STORE_ID = process.env.PRINTFUL_STORE_ID!;
 	const PRINTFUL_API_KEY = process.env.PRINTFUL_API_KEY!;
