@@ -16,8 +16,9 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Hack Club Shop",
-  description: "Support Hack Club with exclusive merch!",
+  description: "Buy some cool Hack Club merch!",
 };
+
 
 export default function RootLayout({
   children,
