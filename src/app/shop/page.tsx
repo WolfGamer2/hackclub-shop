@@ -53,9 +53,11 @@ const Shop = () => {
                             className="border p-4 rounded-lg shadow-lg bg-white flex flex-col"
                         >
                             <Link href={`/products/${product.id}`}>
-                                <img
+                                <Image
                                     src={product.thumbnail_url}
                                     alt={product.name}
+                                    width={500}
+                                    height={500}
                                     className="w-full h-48 object-contain mb-4"
                                 />
                             </Link>

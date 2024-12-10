@@ -146,9 +146,11 @@ const ProductPage = () => {
             <Navigation />
             <div className="container mx-auto p-6">
                 <div className="flex flex-col md:flex-row items-center md:items-start">
-                    <img
+                    <Image
                         src={selectedVariant?.product.image || product.thumbnail_url}
                         alt={product.name}
+                        width={500}
+                        height={500}
                         className="w-full md:w-1/2 h-auto object-contain mb-6 md:mb-0"
                     />
                     <div className="md:ml-6 w-full md:w-1/2">
