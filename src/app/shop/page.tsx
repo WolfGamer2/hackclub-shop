@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Product {
     id: number;
