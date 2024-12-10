@@ -2,12 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
-import Navigation from "../../components/Navigation";
+import Navigation from "./components/Navigation";
 
 const MainPage = () => {
   return (
     <div className="bg-hackclub-light min-h-screen flex flex-col">
-      <Navigation cartItemCount={0} />
+      {/* Navigation */}
+      <Navigation />
 
       <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center px-6 py-16">
         <div className="max-w-3xl w-full">
@@ -15,7 +16,10 @@ const MainPage = () => {
           <p className="text-xl mb-8 max-w-xl mx-auto">
             Grab exclusive merch designed by and for Hack Clubbers. T-shirts, hoodies, stickers, and more!
           </p>
-          <Link href="/shop" className="bg-hackclub-red py-4 px-10 rounded-lg text-xl hover:bg-red-700 transition-all duration-300">
+          <Link
+            href="/shop"
+            className="bg-hackclub-red py-4 px-10 rounded-lg text-xl hover:bg-red-700 transition-all duration-300"
+          >
             Start Shopping
           </Link>
         </div>

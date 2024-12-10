@@ -1,15 +1,18 @@
+'use client';
+
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface CartItem {
   id: number;
   name: string;
-  price: number;
-  quantity: number;
+  price: string;
+  thumbnail_url: string;
+  variant_id: number | null;
 }
 
 const Checkout = () => {
-  const [cart, setCart] = useState<CartItem[]>([]); 
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -22,11 +25,15 @@ const Checkout = () => {
   const handleCheckout = () => {
     setLoading(true);
 
-    // fake payment process
+    // Fake payment process
     setTimeout(() => {
       setLoading(false);
       alert('Checkout complete!');
       router.push('/thank-you'); // Redirect to thank-you page
+
+      setTimeout(() => {
+        router.push('/');
+      }, 2000);
     }, 2000);  // 2 seconds wait
   };
 
@@ -39,7 +46,7 @@ const Checkout = () => {
           {cart.map((item) => (
             <li key={item.id} className="flex justify-between py-2">
               <span>{item.name}</span>
-              <span>${item.price.toFixed(2)}</span>
+              <span>${parseFloat(item.price).toFixed(2)}</span>
             </li>
           ))}
         </ul>
@@ -47,7 +54,7 @@ const Checkout = () => {
         <div className="flex justify-between mt-4 font-semibold">
           <span>Total:</span>
           <span>
-            ${cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0).toFixed(2)}
+            ${cart.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2)}
           </span>
         </div>
 

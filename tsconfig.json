@@ -23,8 +23,14 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
       ]
     },
     "forceConsistentCasingInFileNames": true
