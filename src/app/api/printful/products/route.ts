@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export async function GET() {
 	const PRINTFUL_API_URL = process.env.PRINTFUL_API_URL!;
