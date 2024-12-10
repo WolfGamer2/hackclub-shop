@@ -4,6 +4,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "next/navigation";
 import { CartContext } from "../../../context/CartContext";
 import Navigation from "../../components/Navigation";
+import Image from 'next/image';
 
 interface Variant {
     id: number;
