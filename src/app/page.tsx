@@ -1,13 +1,13 @@
 'use client';
 
 import React from "react";
-import Navigation from "../../components/Navigation";
+import Navigation from "./components/Navigation";
 
 const MainPage = () => {
   return (
     <div className="bg-hackclub-light min-h-screen flex flex-col">
       {/* Navigation  */}
-      <Navigation cartItemCount={0} /> {/* Pass 0 for cart item count since it's not being used here */}
+      <Navigation /> {/* Pass 0 for cart item count since it's not being used here */}
 
       {/* main content section */}
       <div className="flex flex-grow items-center justify-center bg-hackclub-dark text-white text-center px-6 py-16">
@@ -16,9 +16,9 @@ const MainPage = () => {
           <p className="text-xl mb-8 max-w-xl mx-auto">
             Grab exclusive merch designed by and for Hack Clubbers. T-shirts, hoodies, stickers, and more!
           </p>
-          <button className="bg-hackclub-red py-4 px-10 rounded-lg text-xl hover:bg-red-700 transition-all duration-300">
+          <a href="/shop" className="bg-hackclub-red py-4 px-10 rounded-lg text-xl hover:bg-red-700 transition-all duration-300 no-underline hover:no-underline text-white">
             Start Shopping
-          </button>
+          </a>
         </div>
       </div>
 
