@@ -122,7 +122,7 @@ const ProductPage = () => {
 
     if (loading) {
         return (
-            <div className="bg-gray-100 min-h-screen">
+            <div className="bg-hackclub-dark min-h-screen">
                 <Navigation />
                 <div className="container mx-auto p-6">
                     <p className="text-center text-gray-500">Loading product...</p>
@@ -133,7 +133,7 @@ const ProductPage = () => {
 
     if (error || !product) {
         return (
-            <div className="bg-gray-100 min-h-screen">
+            <div className="bg-hackclub-dark min-h-screen">
                 <Navigation />
                 <div className="container mx-auto p-6">
                     <p className="text-center text-red-500">{error || 'Product not found'}</p>
@@ -143,7 +143,7 @@ const ProductPage = () => {
     }
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-hackclub-dark min-h-screen">
             <Navigation />
             <div className="container mx-auto p-6">
                 <div className="flex flex-col md:flex-row items-center md:items-start">
@@ -156,7 +156,7 @@ const ProductPage = () => {
                     />
                     <div className="md:ml-6 w-full md:w-1/2">
                         <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-                        <p className="text-xl text-gray-700 mb-4">
+                        <p className="text-xl text-white mb-4">
                             Price: ${parseFloat(selectedVariant?.retail_price || '0.00').toFixed(2)}
                         </p>
 
@@ -173,7 +173,7 @@ const ProductPage = () => {
                                         const variant = variants.find(v => v.variant_id === parseInt(e.target.value));
                                         setSelectedVariant(variant || null);
                                     }}
-                                    className="border rounded p-2 w-full"
+                                    className="border rounded p-2 w-full bg-hackclub-dark"
                                 >
                                     {variants.map((variant) => (
                                         <option key={variant.variant_id} value={variant.variant_id}>

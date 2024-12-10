@@ -39,7 +39,7 @@ const Shop = () => {
     }, []);
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-hackclub-dark min-h-screen">
             <Navigation />
             <div className="container mx-auto p-4">
                 <h1 className="text-3xl font-bold mb-6 text-center">Shop Our Products</h1>
@@ -51,7 +51,7 @@ const Shop = () => {
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="border p-4 rounded-lg shadow-lg bg-white flex flex-col"
+                            className="border p-4 rounded-2xl shadow-lg bg-white flex flex-col"
                         >
                             <Link href={`/products/${product.id}`}>
                                 <Image
@@ -62,7 +62,7 @@ const Shop = () => {
                                     className="w-full h-48 object-contain mb-4"
                                 />
                             </Link>
-                            <h2 className="text-xl font-semibold mb-2 flex-grow">{product.name}</h2>
+                            <h2 className="text-xl text-black font-semibold mb-2 flex-grow">{product.name}</h2>
                             <p className="text-lg text-gray-700 mb-4">${parseFloat(product.price).toFixed(2)}</p>
                             <Link href={`/products/${product.id}`}>
                                 <button
