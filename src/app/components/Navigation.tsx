@@ -1,17 +1,26 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { CartContext } from '../../context/CartContext';
 
 const Navigation = () => {
   const cartContext = useContext(CartContext);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   if (!cartContext) {
     return null;
   }
 
   const { cart, totalPrice } = cartContext;
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <nav className="bg-hackclub-dark p-4">

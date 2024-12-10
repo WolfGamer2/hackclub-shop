@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import { CartContext } from '../../context/CartContext';
 import { useRouter } from 'next/navigation';
@@ -8,8 +8,17 @@ import { useRouter } from 'next/navigation';
 const CartPage = () => {
     const cartContext = useContext(CartContext);
     const router = useRouter();
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     if (!cartContext) {
+        return null;
+    }
+
+    if (!isClient) {
         return null;
     }
 
