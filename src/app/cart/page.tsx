@@ -30,7 +30,7 @@ const CartPage = () => {
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-hackclub-dark min-h-screen">
             <Navigation />
             <div className="container mx-auto p-6">
                 <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
@@ -44,7 +44,7 @@ const CartPage = () => {
                                         <p>${parseFloat(item.price).toFixed(2)}</p>
                                     </div>
                                     <button
-                                        className="text-red-600 hover:text-red-800"
+                                        className="text-white bg-red-600 rounded"
                                         onClick={() => removeFromCart(item.id)} // Use the unique id
                                     >
                                         Remove

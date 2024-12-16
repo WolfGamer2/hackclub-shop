@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/material": "^6.1.10",
     "autoprefixer": "^10.4.20",
     "next": "^13.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
