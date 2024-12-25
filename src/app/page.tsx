@@ -9,7 +9,7 @@ const MainPage = () => {
   return (
     <div className="bg-hackclub-dark min-h-screen flex flex-col relative">
       {/* Navigation */}
-      <Navigation cartItemCount={0} />
+      <Navigation />
 
       <div className="flex flex-grow items-center justify-center text-white text-center px-6 relative z-10">
         <div className="max-w-3xl w-full">
