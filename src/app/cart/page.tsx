@@ -8,17 +8,8 @@ import { useRouter } from 'next/navigation';
 const CartPage = () => {
     const cartContext = useContext(CartContext);
     const router = useRouter();
-    const [isClient, setIsClient] = useState(false);
 
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    if (!cartContext) {
-        return null;
-    }
-
-    if (!isClient) {
+    if (!cartContext || cartContext.cart === null) {
         return null;
     }
 

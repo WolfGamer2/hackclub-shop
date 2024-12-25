@@ -14,7 +14,7 @@ const Navigation = () => {
     setIsClient(true);
   }, []);
 
-  if (!cartContext) {
+  if (!cartContext || cartContext.cart === null) {
     return null;
   }
 
@@ -30,7 +30,7 @@ const Navigation = () => {
         <Link href="/" className="text-white text-2xl font-bold">
           Hack Club Shop
         </Link>
-        
+
         <div className='flex flex-row'>
           <Link href="/cart" className="text-white ">
             <Badge badgeContent={cart.length} showZero={true} color="info" className='mr-5'>

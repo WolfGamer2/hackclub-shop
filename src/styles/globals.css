@@ -9,14 +9,20 @@
     --hackclub-dark: #181818;
     --hackclub-light: #ffffff;
     --hackclub-blue: #00bfff;
-    --hackclub-red: #ff0000;
+    /* --hackclub-red: #ff0000; */
+}
+
+@font-face {
+    font-family: 'Phantom Sans';
+    src: url('../../public/fonts/PhantomSans_Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* Global Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--hackclub-dark);
-    color: var(--hackclub-light);
+    font-family: 'Phantom Sans', sans-serif;
+    background-color: #FFF;
 }
 
 a {
@@ -34,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--hackclub-light);
+    color: var(--hackclub-text);
 }
 
 button {
