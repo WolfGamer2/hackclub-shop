@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Navigation from '../components/Navigation';
 import { CartContext } from '../../context/CartContext';
 import { useRouter } from 'next/navigation';
