@@ -51,7 +51,7 @@ const CartPage = () => {
                             className="bg-blue-600 text-white py-2 px-4 mt-6 rounded"
                             onClick={handleCheckout}
                         >
-                            Proceed to Checkout
+                            Proceed to Preorder Checkout
                         </button>
                         <button
                             className="bg-red-600 text-white py-2 px-4 mt-6 rounded ml-4"

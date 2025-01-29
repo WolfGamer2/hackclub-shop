@@ -17,14 +17,14 @@ const MainPage = () => {
             Welcome to the Hack Club Shop
           </h1>
           <p className="text-xl mb-8 max-w-xl mx-auto">
-            Grab exclusive merch designed by and for Hack Clubbers. T-shirts,
+            Preorder exclusive merch designed by and for Hack Clubbers. T-shirts,
             hoodies, stickers, and more!
           </p>
           <Link
             href="/shop"
             className="text-white bg-hackclub-red py-4 px-10 rounded-lg text-xl hover:bg-red-700 transition-all duration-300"
           >
-            Start Shopping
+            Start Preordering
           </Link>
         </div>
       </div>
@@ -62,7 +62,7 @@ const MainPage = () => {
       </div>
 
       <footer className="text-center text-white py-6 bg-hackclub-dark z-10">
-        © 2024 Hack Club. All rights reserved.
+        © 2025 Hack Club Shop. All rights reserved.
       </footer>
     </div>
   );

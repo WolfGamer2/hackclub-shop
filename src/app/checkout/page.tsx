@@ -28,7 +28,7 @@ const Checkout = () => {
     // Fake payment process
     setTimeout(() => {
       setLoading(false);
-      alert('Checkout complete!');
+      alert('Preorder taken! We will contact you soon.'); // Show alert
       router.push('/thank-you'); // Redirect to thank-you page
 
       setTimeout(() => {
@@ -39,7 +39,7 @@ const Checkout = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold">Checkout</h1>
+      <h1 className="text-3xl font-bold">Preorder Checkout</h1>
       <div className="mt-4">
         <h2 className="text-xl">Cart Items</h2>
         <ul>
